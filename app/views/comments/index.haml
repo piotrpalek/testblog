@@ -2,7 +2,4 @@
   = link_to "Add comment", new_post_comment_path(post)
 
 %h2 comments:
-%ul
-  - comments.each do |comment|
-    %li
-      =comment.body
+= render "list"
