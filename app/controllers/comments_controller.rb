@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
   def create
     if comment.save
-      redirect_to comment.post, :notice => "Successfully created comment."
+      redirect_to action: :index, :notice => "Successfully created comment."
     else
       render :new
     end
