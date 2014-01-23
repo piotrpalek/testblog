@@ -10,6 +10,7 @@
   .post__tags-list.tagsinput
     - post.tags_array.each do |tag|
       = content_tag :span, tag, class: 'tag'
+  .post__tags-clear
 
 .post__comments-link
   = link_to "Show comments", post_comments_path(post)
