@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   expose_decorated(:posts) { Post.all }
   expose_decorated(:post, attributes: :post_params)
   expose(:tag_cloud) { [] }
-  expose(:comments) { post.comments }
+  expose(:comments) { post.comments.where(:user.exists => true) }
 
   def index
   end
