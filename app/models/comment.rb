@@ -4,7 +4,7 @@ class Comment
 
   field :body, type: String
 
-  validates_presence_of :body
+  validates_presence_of :body, :user
 
   belongs_to :user
   belongs_to :post
