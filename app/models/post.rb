@@ -9,6 +9,8 @@ class Post
 
   validates_presence_of :body, :title
 
+  has_many :comments
+
   belongs_to :user
 
   default_scope ->{ ne(archived: true) }
