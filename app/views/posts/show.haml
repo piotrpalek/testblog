@@ -12,7 +12,7 @@
       = content_tag :span, tag, class: 'tag'
   .post__tags-clear
 
-%h3 comments (#{comments.count}):
+%h2.comments__header comments (#{comments.count}):
 .comments__button--add
   = link_to "Add comment", new_post_comment_path(post)
 

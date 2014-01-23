@@ -1,4 +1,5 @@
-%ul
+%ul.comments__list
   - comments.each do |comment|
-    %li
-      =comment.body
+    %li.comment__list-item
+      .comment__user= comment.user.name
+      .comment__body= comment.body
