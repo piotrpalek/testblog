@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   expose(:post)
   expose(:comments) { post.comments }
-  expose(:comment)
+  expose(:comment, attributes: :comment_params)
 
   def index
   end
@@ -16,6 +16,12 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit!
   end
 
 end
