@@ -5,9 +5,9 @@
         .comment__user= comment.user.name
         .comment__votes ( #{ comment.votes.pluck(:value).sum } )
         -if comment.upvoted_by_user?(current_user.id)
-          .comment__vote-down.btn.btn-small= link_to 'v', vote_down_post_comment_path(comment.post, comment), method: :post
+          =link_to 'v', vote_down_post_comment_path(comment.post, comment), method: :post, class: 'comment__vote-down btn btn-small'
         -if comment.downvoted_by_user?(current_user.id)
-          .comment__vote-up.btn.btn-small= link_to '^', vote_up_post_comment_path(comment.post, comment), method: :post
+          =link_to '^', vote_up_post_comment_path(comment.post, comment), method: :post, class: 'comment__vote-up btn btn-small'
         -if comment.post.user == current_user && comment.abusive
           .comment__mark-not-abusive= link_to 'not abusive', mark_as_not_abusive_post_comment_path(comment.post, comment), method: :post
       .comment__body= comment.body
