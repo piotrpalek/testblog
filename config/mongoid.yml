@@ -1,7 +1,7 @@
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      uri: 'mongodb://easyblog:easyblog@ds027759.mongolab.com:27759/heroku_app21543687'
       options:
         max_retries: 30
         retry_interval: 1
