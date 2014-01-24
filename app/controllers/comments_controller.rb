@@ -19,10 +19,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def mark_as_not_abusive
+    comment.mark_not_abusive!
+    redirect_to comment.post
+  end
+
   private
 
   def comment_params
-    params.require(:comment).permit!
+    params.permit(:comment)
   end
 
 end
