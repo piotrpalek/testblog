@@ -40,6 +40,10 @@ class Comment
     Vote.where(comment_id: id, user_id: user_id, value: 1).count > 0
   end
 
+  def downvoted_by_user?(user_id)
+    Vote.where(comment_id: id, user_id: user_id, value: -1).count > 0
+  end
+
   private
 
   def vote_for_user(user_id)
