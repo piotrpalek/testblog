@@ -20,15 +20,15 @@ class Post
   end
 
   def hotness
-    hotness = self.comments.count >= 3 ? 1 : 0
+    hotness = comments.count >= 3 ? 1 : 0
 
-    if self.created_at >= 1.days.ago
+    if created_at >= 1.days.ago
       hotness + 3
-    elsif self.created_at >= 3.days.ago
+    elsif created_at >= 3.days.ago
       hotness + 2
-    elsif self.created_at >= 7.days.ago
+    elsif created_at >= 7.days.ago
       hotness + 1
-    else self.created_at > 7.days.ago
+    else created_at > 7.days.ago
       hotness
     end
 
