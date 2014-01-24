@@ -29,6 +29,11 @@ class CommentsController < ApplicationController
     redirect_to comment.post
   end
 
+  def vote_down
+    comment.vote_down current_user.id
+    redirect_to comment.post
+  end
+
   private
 
   def comment_params
