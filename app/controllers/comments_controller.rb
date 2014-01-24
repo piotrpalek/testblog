@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
     comment.user = current_user
     if comment.save
-      redirect_to comment.post, :notice => "Successfully created comment."
+      redirect_to comment.post, notice: 'Successfully created comment.'
     else
       render :new
     end

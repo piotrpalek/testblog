@@ -3,7 +3,7 @@
     = post.title
     %small
       = post.friendly_date
-  = link_to "edit", edit_post_path(post), class: 'post__button--edit'
+  = link_to 'edit', edit_post_path(post), class: 'post__button--edit'
 
   .post__body
     = post.body
@@ -14,6 +14,6 @@
 
 %h2.comments__header comments (#{comments.count}):
 .comments__button--add
-  = link_to "Add comment", new_post_comment_path(post)
+  = link_to 'Add comment', new_post_comment_path(post)
 
-= render "comments/list"
+= render 'comments/list'
