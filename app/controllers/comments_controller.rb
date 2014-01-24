@@ -32,7 +32,8 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.permit(:comment)
+    #hackish
+    params.permit(comment: [:body])[:comment]
   end
 
 end
