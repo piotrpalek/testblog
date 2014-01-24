@@ -9,4 +9,6 @@
             = link_to 'v', vote_down_post_comment_path(comment.post, comment), method: :post
         -else
           .comment__vote-up.btn.btn-small= link_to '^', vote_up_post_comment_path(comment.post, comment), method: :post
+        -if comment.post.user == current_user && comment.abusive
+          .comment__mark-not-abusive= link_to 'not abusive', mark_as_not_abusive_post_comment_path(comment.post, comment), method: :post
       .comment__body= comment.body
