@@ -3,4 +3,5 @@
     %li.comment__list-item
       .comment__header
         .comment__user= comment.user.name
+        .comment__votes ( #{ comment.votes.pluck(:value).sum } )
       .comment__body= comment.body
