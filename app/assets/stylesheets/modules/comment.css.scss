@@ -11,11 +11,21 @@
   margin: 0 0;
   .comment__list-item {
     margin-bottom: 5px;
-  }
-  .comment__user {
-    font-weight: bold;
-  }
-  .comment__body {
-    margin-left: 10px;
+    .comment__header {
+      .comment__vote-down, .comment__vote-up, .comment__user, .comment__votes, .comment__mark-not-abusive{
+        display: inline-block;
+      }
+      .comment__vote-down, .comment__vote-up{
+        & a {
+          text-decoration: none;
+        }
+      }
+      .comment__user {
+          font-weight: bold;
+      }
+    }
+    .comment__body {
+      margin-left: 10px;
+    }
   }
 }
