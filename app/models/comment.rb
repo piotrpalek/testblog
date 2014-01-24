@@ -26,6 +26,12 @@ class Comment
     vote.save
   end
 
+  def vote_down(user_id)
+    vote = vote_for_user(user_id)
+    vote.value = -1
+    vote.save
+  end
+
   def negative_votes
     votes.pluck(:value).select { |n| n == -1 }
   end
